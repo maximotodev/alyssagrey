@@ -42,7 +42,7 @@ async function getAlbums() {
     }
 
 export default async function Page() {
-
+  unstable_noStore()
   const { tracks } = await getAlbums()
 
   return (
