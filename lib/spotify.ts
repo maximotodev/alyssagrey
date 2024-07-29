@@ -34,7 +34,7 @@ export const getArtist = async () => {
   });
 };
 
-const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
+const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/top-tracks`;
 
 export const getTopTracks = async () => {
   const { access_token } = await getAccessToken();
@@ -57,7 +57,7 @@ export const getNowPlaying = async () => {
   });
 };
 
-const ALBUMS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/albums`;
+const ALBUMS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/albums?offset=0&limit=10&include_groups=album,single`;
 
 export const getAlbums = async () => {
   const { access_token } = await getAccessToken();

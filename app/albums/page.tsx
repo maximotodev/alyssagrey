@@ -1,24 +1,37 @@
+import { unstable_noStore } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import React, { Key } from "react";
-import { Url } from "url";
 
-interface Item {
-  id: Key | null | undefined,
-  images: {
-    url: string
-  }[],
+interface Track {
+  album: {
+    album_type: string,
+    external_urls: {
+      spotify: string
+    },
+    href: string,
+    images: [
+      {
+       url: string,
+        height: number,
+        width: number
+      }
+    ],
+    is_playable: true,
+    name: string,
+    release_date: Date,
+  },
+  external_urls: { spotify: string },
   name: string,
-  external_urls: {
-    spotify: Url
-  }
-  release_date: string,
+  popularity: number,
+  preview_url: string,
+  id: string,
 }
 
 const redirect_uri = process.env.REDIRECT_URI
 
 async function getAlbums() {
-
+    unstable_noStore()
     const res = await fetch(`${redirect_uri}/api/albums`);
    
       if (!res.ok) {
@@ -29,17 +42,17 @@ async function getAlbums() {
     }
 
 export default async function Page() {
-  const data = await getAlbums()
-  let albums: Item[] = data.items
-  const slicedArray = albums.slice(0,8)
+
+  const { tracks } = await getAlbums()
+
   return (
       
       <section>
           <ul>
-      {slicedArray.map((album) => (
-          <Link href={album.external_urls.spotify} key={album.id}>
-            <li>{album.name}</li>
-            <Image priority width={360} height={360} src={album.images[1].url} alt={album.name} />
+      {tracks.map((track: Track) => (
+          <Link href={track.album.external_urls.spotify} key={track.id}>
+            <li>{track.name}</li>
+            <Image priority width={360} height={360} src={track.album.images[0].url} alt={track.name} />
           </Link>
       ))}
   </ul>

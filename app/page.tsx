@@ -1,3 +1,4 @@
+import { unstable_noStore } from "next/cache";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
@@ -14,10 +15,10 @@ interface Artist {
 }
 
 const redirect_uri = process.env.REDIRECT_URI
-
+// 
 async function getHero() {
-
-  const res = await fetch(`${redirect_uri}/api`);
+  unstable_noStore()
+  const res = await fetch(`${redirect_uri}/api/`);
   // let data: Artist = await res.json()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
@@ -27,7 +28,9 @@ async function getHero() {
   }
 
 export default async function Home() {
+
   const data: Artist = await getHero()
+  // console.log(data)
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <h1>{data.name}</h1>
