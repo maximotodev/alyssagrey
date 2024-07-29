@@ -28,11 +28,10 @@ interface Track {
   id: string,
 }
 
-const redirect_uri = process.env.REDIRECT_URI
-
 async function getAlbums() {
     unstable_noStore()
-    const res = await fetch(`${redirect_uri}/api/albums`);
+    
+    const res = await fetch(`http://127.0.0.1:3000/api/albums`);
    
       if (!res.ok) {
           // This will activate the closest `error.js` Error Boundary
@@ -46,7 +45,6 @@ export default async function Page() {
   const { tracks } = await getAlbums()
 
   return (
-      
       <section>
           <ul>
       {tracks.map((track: Track) => (

@@ -14,11 +14,10 @@ interface Artist {
   followers: {total: number}
 }
 
-const redirect_uri = process.env.REDIRECT_URI
-// 
 async function getHero() {
+  
   unstable_noStore()
-  const res = await fetch(`${redirect_uri}/api/`);
+  const res = await fetch(`http://127.0.0.1:3000/api`);
   // let data: Artist = await res.json()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
@@ -28,6 +27,7 @@ async function getHero() {
   }
 
 export default async function Home() {
+
   unstable_noStore()
   const data: Artist = await getHero()
  
