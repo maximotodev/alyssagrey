@@ -1,3 +1,4 @@
+import { unstable_noStore } from 'next/cache';
 import querystring from 'querystring';
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -8,6 +9,8 @@ const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 export const getAccessToken = async () => {
+  unstable_noStore()
+
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -26,6 +29,8 @@ const GET_ARTIST_ENDPOINT =
 `https://api.spotify.com/v1/artists/${artist_id}`
 
 export const getArtist = async () => {
+  unstable_noStore()
+
   const { access_token } = await getAccessToken();
   return fetch(GET_ARTIST_ENDPOINT, {
     headers: {
@@ -37,6 +42,8 @@ export const getArtist = async () => {
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/top-tracks`;
 
 export const getTopTracks = async () => {
+  unstable_noStore()
+
   const { access_token } = await getAccessToken();
   return fetch(TOP_TRACKS_ENDPOINT, {
     headers: {
@@ -60,6 +67,8 @@ export const getNowPlaying = async () => {
 const ALBUMS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/albums?offset=0&limit=10&include_groups=album,single`;
 
 export const getAlbums = async () => {
+  unstable_noStore()
+
   const { access_token } = await getAccessToken();
   return fetch(ALBUMS_ENDPOINT, {
     headers: {

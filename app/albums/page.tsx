@@ -29,6 +29,7 @@ interface Track {
 }
 
 async function getAlbums() {
+
     unstable_noStore()
     
     const res = await fetch(`http://127.0.0.1:3000/api/albums`);
@@ -41,7 +42,7 @@ async function getAlbums() {
     }
 
 export default async function Page() {
-  unstable_noStore()
+  
   const { tracks } = await getAlbums()
 
   return (

@@ -15,7 +15,7 @@ interface Artist {
 }
 
 async function getHero() {
-  
+
   unstable_noStore()
   const res = await fetch(`http://127.0.0.1:3000/api`);
   // let data: Artist = await res.json()
@@ -28,7 +28,6 @@ async function getHero() {
 
 export default async function Home() {
 
-  unstable_noStore()
   const data: Artist = await getHero()
  
   return (
