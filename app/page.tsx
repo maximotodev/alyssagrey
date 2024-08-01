@@ -1,3 +1,4 @@
+import { getArtist } from "@/lib/spotify";
 import { unstable_noStore } from "next/cache";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
@@ -18,7 +19,6 @@ async function getHero() {
 
   unstable_noStore()
   const res = await fetch(`http://127.0.0.1:3000/api`);
-  // let data: Artist = await res.json()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
@@ -32,6 +32,7 @@ export default async function Home() {
  
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    
         <h1>{data.name}</h1>
        <Image priority width={data.images[0].width} height={data.images[0].height} src={data.images[0].url} alt={data.name} />
         <p>{data.followers.total}</p>
