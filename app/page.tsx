@@ -18,7 +18,8 @@ interface Artist {
 async function getHero() {
 
   unstable_noStore()
-  const res = await fetch(`http://127.0.0.1:3000/api`);
+  // const res = await fetch(`http://127.0.0.1:3000/api`);
+  const res = await getArtist()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')

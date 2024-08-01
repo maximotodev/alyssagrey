@@ -12,7 +12,7 @@ export async function GET(request: Request) {
  
   const response = await getTopTracks();
   const data = await response.json();
-
+  
   return Response.json( data , { 
     status: 200,
     // headers: { 'Set-Cookie': `token=${token.value}` },
