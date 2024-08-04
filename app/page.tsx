@@ -16,8 +16,8 @@ interface Artist {
 }
 
 async function getHero() {
-
-  const res = await fetch(`http://127.0.0.1:3000/api`);
+  unstable_noStore()
+  const res = await fetch(`${process.env.REDIRECT_URI}/api`);
   // const res = await getArtist()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary

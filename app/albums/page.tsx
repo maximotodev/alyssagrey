@@ -33,7 +33,7 @@ async function getTracks() {
 
     unstable_noStore()
     
-    const res = await fetch(`http://127.0.0.1:3000/api/albums`);
+    const res = await fetch(`${process.env.REDIRECT_URI}/api/albums`);
    
     //   if (!res.ok) {
     //       // This will activate the closest `error.js` Error Boundary
