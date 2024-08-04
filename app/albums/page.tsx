@@ -31,19 +31,17 @@ interface Track {
 
 async function getTracks() {
 
-    // unstable_noStore()
+    unstable_noStore()
     
-    // const res = await fetch(`http://127.0.0.1:3000/api/albums`);
+    const res = await fetch(`http://127.0.0.1:3000/api/albums`);
    
     //   if (!res.ok) {
     //       // This will activate the closest `error.js` Error Boundary
     //       throw new Error('Failed to fetch data')
     //     }
     //   return res.json()
-
-      unstable_noStore()
       // const res = await fetch(`http://127.0.0.1:3000/api`);
-      const res = await getTopTracks()
+      // const res = await getTopTracks()
         if (!res.ok) {
             // This will activate the closest `error.js` Error Boundary
             throw new Error('Failed to fetch data')

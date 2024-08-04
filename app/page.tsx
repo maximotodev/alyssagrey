@@ -17,9 +17,8 @@ interface Artist {
 
 async function getHero() {
 
-  unstable_noStore()
-  // const res = await fetch(`http://127.0.0.1:3000/api`);
-  const res = await getArtist()
+  const res = await fetch(`http://127.0.0.1:3000/api`);
+  // const res = await getArtist()
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
@@ -30,7 +29,7 @@ async function getHero() {
 export default async function Home() {
 
   const data: Artist = await getHero()
- 
+  // console.log(data)
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
     
