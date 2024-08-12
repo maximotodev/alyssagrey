@@ -5,10 +5,9 @@ import { NextResponse } from "next/server";
 
 // Handles GET requests to /api/
 export async function GET(request: Request) {
-
+  unstable_noStore()
   const response = await getArtist();
   const data = await response.json()
-  console.log(data)
   return NextResponse.json( data , { status: 200 });
 }
 

@@ -13,23 +13,23 @@ exports.id = "app/favicon.ico/route";
 exports.ids = ["app/favicon.ico/route"];
 exports.modules = {
 
-/***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":
-/*!*************************************************************************!*\
-  !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!
-  \*************************************************************************/
+/***/ "next/dist/compiled/next-server/app-page-experimental.runtime.dev.js":
+/*!**************************************************************************************!*\
+  !*** external "next/dist/compiled/next-server/app-page-experimental.runtime.dev.js" ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
-module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js");
+module.exports = require("next/dist/compiled/next-server/app-page-experimental.runtime.dev.js");
 
 /***/ }),
 
-/***/ "next/dist/compiled/next-server/app-route.runtime.dev.js":
-/*!**************************************************************************!*\
-  !*** external "next/dist/compiled/next-server/app-route.runtime.dev.js" ***!
-  \**************************************************************************/
+/***/ "next/dist/compiled/next-server/app-route-experimental.runtime.dev.js":
+/*!***************************************************************************************!*\
+  !*** external "next/dist/compiled/next-server/app-route-experimental.runtime.dev.js" ***!
+  \***************************************************************************************/
 /***/ ((module) => {
 
-module.exports = require("next/dist/compiled/next-server/app-route.runtime.dev.js");
+module.exports = require("next/dist/compiled/next-server/app-route-experimental.runtime.dev.js");
 
 /***/ }),
 

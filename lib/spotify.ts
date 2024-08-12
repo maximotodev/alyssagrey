@@ -28,7 +28,7 @@ const GET_ARTIST_ENDPOINT =
 `https://api.spotify.com/v1/artists/${artist_id}`
 
 export const getArtist = async () => {
-  unstable_noStore()
+  
   const { access_token } = await getAccessToken();
   return fetch(GET_ARTIST_ENDPOINT, {
     headers: {

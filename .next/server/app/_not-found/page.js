@@ -78,14 +78,14 @@ module.exports = require("next/dist/client/components/static-generation-async-st
 
 /***/ }),
 
-/***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":
-/*!*************************************************************************!*\
-  !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!
-  \*************************************************************************/
+/***/ "next/dist/compiled/next-server/app-page-experimental.runtime.dev.js":
+/*!**************************************************************************************!*\
+  !*** external "next/dist/compiled/next-server/app-page-experimental.runtime.dev.js" ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js");
+module.exports = require("next/dist/compiled/next-server/app-page-experimental.runtime.dev.js");
 
 /***/ }),
 
