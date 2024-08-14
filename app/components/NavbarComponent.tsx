@@ -39,9 +39,9 @@ export default function App() {
             Hello!
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === '/albums' ? true : false }>
-          <Link href="/albums" aria-current="page">
-            Albums
+        <NavbarItem isActive={pathname === '/tracks' ? true : false }>
+          <Link href="/tracks" aria-current="page">
+            Top Tracks
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname === '/events' ? true : false }>

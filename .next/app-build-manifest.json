@@ -16,30 +16,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
+    "/tracks/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tracks/page.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/albums/page": [
+    "/events/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/albums/page.js"
-    ],
-    "/albums/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/albums/layout.js"
-    ],
-    "/albums/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/albums/error.js"
-    ],
-    "/albums/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/albums/loading.js"
+      "static/chunks/app/events/page.js"
     ]
   }
 }
