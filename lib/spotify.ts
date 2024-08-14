@@ -40,6 +40,7 @@ export const getArtist = async () => {
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/artists/${artist_id}/top-tracks`;
 
 export const getTopTracks = async () => {
+  
   const { access_token } = await getAccessToken();
   return fetch(TOP_TRACKS_ENDPOINT, {
     headers: {
